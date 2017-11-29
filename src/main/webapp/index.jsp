@@ -48,7 +48,7 @@
                                 
                             </tr>
                             <% if (request.getAttribute("listaConsultas") != null) {
-                                    ArrayList<Consulta> list = (ArrayList<Consulta>) request.getAttribute("listaActivos");
+                                    ArrayList<Consulta> list = (ArrayList<Consulta>) request.getAttribute("listaConsultas");
                                     if (list != null)
                                         for (Consulta consulta : list) {
                             %>
