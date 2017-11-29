@@ -55,9 +55,9 @@
                             <tr>
                                 <td><%=consulta.getIdColmena()%></td>
                                 <td><%=consulta.getUbicacion()%></td>
-                                <td><%=activo.getFabrica()%></td>
-                                <td><%=activo.getIdColmenaMadre()%></td>
-                                <td><%=activo.getTotal()%></td>
+                                <td><%=consulta.getFabrica()%></td>
+                                <td><%=consulta.getIdColmenaMadre()%></td>
+                                <td><%=consulta.getTotal()%></td>
                               
                                
                             </tr>
