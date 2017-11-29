@@ -3,7 +3,8 @@
     Created on : 16/10/2017, 04:40:00 PM
     Author     : User
 --%>
-
+<%@page import="Model.Consulta"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -21,7 +22,7 @@
     <body background="fondo.jpg">
 
         <div class="container">
-            <h1 class="col-md-4">METAMODEL S.A.</h1>
+            <h1 class="col-md-4">BASES CONSULTA</h1>
             <div class="span12">&nbsp;</div>
             <div class="span12">&nbsp;</div>
             <div class="span12">&nbsp;</div>
@@ -30,36 +31,43 @@
             <div class="span12">&nbsp;</div>
 
             <div class="col-md-4">
-                <a class href="Esquemas">
-                    <button type="button" class="btn btn-primary btn-lg">ESQUEMA</button>
+                <a class href="Consultas">
+                    <button type="button" class="btn btn-primary btn-lg">CONSULTA</button>
                 </a>
-                <a  href="Tablas">
-                    <button type="button" class="btn btn-success btn-lg">TABLA</button>
-                </a>
-                <a  href="Columnas">
-                    <button   type="button" class="btn btn-danger btn-lg">COLUMNA</button>  
-                </a>
-                <br>
-                <br> 
-                <a  href="ModeloNavegacion">
-                    <button   type="button" class="btn btn-primary btn-lg">MODELO NAVEGACION</button>  
-                </a>
-                <br>
-                <br> 
-                <a  href="ContextoNavegacion">
-                    <button   type="button" class="btn btn-success btn-lg">CONTEXTO NAVEGACION</button>  
-                </a>
-                <br>
-                <br> 
-                <a  href="UnidadAbstractaInformacion">
-                    <button   type="button" class="btn btn-danger btn-lg">UNIDAD ABSTRACTA INFORMACION</button>  
-                </a>
-                <br>
-                <br> 
-                <a  href="Puntos4.jsp">
-                    <button   type="button" class="btn btn-warning btn-lg">CONSULTA PUNTO 4</button>  
-                </a>
+             
             </div>
+            
+            
+             <table class="table table-striped">
+                            <tr>
+                                <th>ID Colmena</th>
+                                <th>Ubicacion</th>
+                                <th>Fabrica</th>
+                                <th>ID Colmena Madre</th>
+                                <th>Total</th>
+                                
+                            </tr>
+                            <% if (request.getAttribute("listaConsultas") != null) {
+                                    ArrayList<Consulta> list = (ArrayList<Consulta>) request.getAttribute("listaActivos");
+                                    if (list != null)
+                                        for (Consulta consulta : list) {
+                            %>
+                            <tr>
+                                <td><%=consulta.getIdColmena()%></td>
+                                <td><%=consulta.getUbicacion()%></td>
+                                <td><%=activo.getFabrica()%></td>
+                                <td><%=activo.getIdColmenaMadre()%></td>
+                                <td><%=activo.getTotal()%></td>
+                              
+                               
+                            </tr>
+                            <% }
+                                }
+                            %>
+                        </table>
+            
+            
+            
         </div>
     </body>
 </html>
